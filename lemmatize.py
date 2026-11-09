@@ -140,8 +140,28 @@ def lemmatize(text):
 
 def lemmatize_many(texts, 
                    batch_size=200, 
-                   n_process=50, 
+                   n_process=20, 
                    progress=True):
+    """
+    Lemmatize a list of texts, with optional batching and multiprocessing.
+
+    Parameters
+    ----------
+    texts : list of str
+        The texts to lemmatize.
+    batch_size : int, 200
+        The number of texts to process in each batch.
+    n_process : int, 20
+        The number of processes to use for multiprocessing.
+    progress : bool, True
+        Whether to display a progress bar.
+
+    Returns
+    -------
+    list of list of str
+        A list of lists, where each inner list contains the lemmatized tokens for the corresponding text.    
+    """
+
     print("Fixing casing...")
     prepped = [_prep(t) for t in texts]
     print("Tokenizing...")
