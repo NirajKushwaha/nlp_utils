@@ -18,6 +18,7 @@
 import spacy
 import truecase
 from spacy.util import filter_spans
+from tqdm import tqdm
 
 def fix_hyphens_in_tokenizer(nlp):
     from spacy.lang.char_classes import ALPHA, ALPHA_LOWER, ALPHA_UPPER, CONCAT_QUOTES, LIST_ELLIPSES, LIST_ICONS
